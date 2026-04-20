@@ -1,23 +1,21 @@
-﻿@{
+﻿@using WebApp.Models
+
+@Model Proyector
+
+@{
+
     ViewData["Title"] = "Inicio";
+
 }
 
 <div class="container">
-
     <div class="text-start">
-        <h1 class="display-4">Informacion de los proyectores</h1>
-        <h2 class="display-6">Proyector # @ViewData["Id"] </h2>
-        <p>Marca: @ViewData["Marca"]</p>
-        <p>Modelo: @ViewData["Modelo"]</p>
-        <p>Número de serie: @ViewData["Numero de serie"]</p>
-        <p>Situacion: @ViewData["Situacion"]</p>
-        <p>Fecha de alta: @ViewData["FechaDeAlta"]</p>
-        <h2 class="display-6">Proyector # @ViewBag.Id </h2>
-        <p>Marca: @ViewBag.Marca</p>
-        <p>Modelo: @ViewBag.Modelo</p>
-        <p>Número de serie: @ViewBag.NumeroDeSerie</p>
-        <p>Situacion: @ViewBag.Situacion</p>
-        <p>Fecha de alta: @ViewBag.FechaDeAlta</p>
+        <h1 class="display-4">Informacion de proyectores</h1>
+        <h2 class="display-6">Proyector # @Model.Id </h2>
+        <p>Marca: @Model.Marca </p><p>Modelo: @Model.Modelo </p>
+        <p>Numero de serie: @Model.NumeroDeSerie </p>
+        <p>Situacion: @Model.Situacion </p>
+        <p>Fecha de alta: @Model.FechaDeAlta.ToString("d") </p>
     </div>
-
-</div> 
+   
+</div>

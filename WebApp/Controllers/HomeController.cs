@@ -11,12 +11,6 @@ namespace WebApp.Controllers
             //ViewBag es un objeto dinámico que permite enviar datos a la vista sin necesidad de definir una clase específica para ello
 
             //uso ViewData para enviar datos a la vista
-            ViewData["Id"] = 1;
-            ViewData["Marca"] = "Epson";
-            ViewData["Modelo"] = "Xlight";
-            ViewData["Numero de serie"] = "123456";
-            ViewData["Situacion"] = "Bueno";
-            ViewData["FechaDeAlta"] = DateTime.Now.ToString();
             ViewBag.Id = 2;
             ViewBag.Marca = "Epson";
             ViewBag.Modelo = "Xlight";
@@ -24,6 +18,33 @@ namespace WebApp.Controllers
             ViewBag.Situacion = "Bueno";
             ViewBag.FechaDeAlta = DateTime.Now.ToString();
             return View();
+
+            //Uso de modelo de la vista  
+            Proyector proyector = new()
+
+            {
+                Id = 2,
+                Marca = "Epson",
+                Modelo = "Xlight",
+                NumeroDeSerie = "123456",
+                Situacion = SituacionProyector.Bueno,
+                FechaDeAlta = DateTime.Now
+            };
+
+
+            return View(proyector);
+        }
+
+        public IActionResult Privacy()
+
+        {
+            return View();
+        }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }
