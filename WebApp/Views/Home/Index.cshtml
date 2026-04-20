@@ -2,11 +2,6 @@
     ViewData["Title"] = "Inicio";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Bienvenidos</h1>
-    <p>Esta será la página principal de la aplicación</p>
-    <p>Autor: Jan Carlo Lopez Cardozo</p>
-</div>
 <div class="container">
 
     <div class="text-start">
@@ -17,6 +12,12 @@
         <p>Número de serie: @ViewData["Numero de serie"]</p>
         <p>Situacion: @ViewData["Situacion"]</p>
         <p>Fecha de alta: @ViewData["FechaDeAlta"]</p>
+        <h2 class="display-6">Proyector # @ViewBag.Id </h2>
+        <p>Marca: @ViewBag.Marca</p>
+        <p>Modelo: @ViewBag.Modelo</p>
+        <p>Número de serie: @ViewBag.NumeroDeSerie</p>
+        <p>Situacion: @ViewBag.Situacion</p>
+        <p>Fecha de alta: @ViewBag.FechaDeAlta</p>
     </div>
 
 </div> 
