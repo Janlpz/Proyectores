@@ -23,14 +23,14 @@ namespace WebApp.Controllers
 
             //Uso de modelo de la vista  
             
-            var modelo = LoadDATA();
+            var modelo = LoadData();
 
             //var modelo = new List<proyector()>;
 
             return View(modelo);
         }
 
-        private IEnumerable<Proyector> LoadDATA()
+        private IEnumerable<Proyector> LoadData()
         {
             var proyectores = new List<Proyector>();
 
@@ -49,9 +49,9 @@ namespace WebApp.Controllers
             
             {
                 Id = 2,
-                Marca = "Epson",
-                Modelo = "Xlight",
-                NumeroDeSerie = "123456",
+                Marca = "LG",
+                Modelo = "XLig574",
+                NumeroDeSerie = "123788",
                 Situacion = SituacionProyector.Bueno,
                 FechaDeAlta = DateTime.Now
             });
@@ -59,29 +59,29 @@ namespace WebApp.Controllers
             proyectores.Add(new Proyector()
             {
                 Id = 3,
-                Marca = "Epson",
-                Modelo = "Xlight",
-                NumeroDeSerie = "123456",
-                Situacion = SituacionProyector.Bueno,
+                Marca = "Sony",
+                Modelo = "VPL-XW5000",
+                NumeroDeSerie = "123999",
+                Situacion = SituacionProyector.Regular,
                 FechaDeAlta = DateTime.Now
             });
 
             proyectores.Add(new Proyector()
             {
                 Id = 4,
-                Marca = "Epson",
-                Modelo = "Xlight",
-                NumeroDeSerie = "123456",
-                Situacion = SituacionProyector.Bueno,
+                Marca = "Samsung",
+                Modelo = "Xlig874",
+                NumeroDeSerie = "15789",
+                Situacion = SituacionProyector.Malo,
                 FechaDeAlta = DateTime.Now
             });
 
             proyectores.Add(new Proyector()
             {
                 Id = 5,
-                Marca = "Epson",
-                Modelo = "Xlight",
-                NumeroDeSerie = "123456",
+                Marca = "Panasonic",
+                Modelo = "X4874",
+                NumeroDeSerie = "178921",
                 Situacion = SituacionProyector.Bueno,
                 FechaDeAlta = DateTime.Now
             });
