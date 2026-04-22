@@ -12,7 +12,7 @@
 
         public SituacionProyector Situacion { get; set; }
 
-        public DateTime? FechaDeAlta { get; set; }
+        public DateTime FechaDeAlta { get; set; }
         public DateTime? FechaDeBaja { get; set; }
     }
 

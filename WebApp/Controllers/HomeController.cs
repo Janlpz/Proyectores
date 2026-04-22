@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using System.Reflection;
+using System.Text.RegularExpressions;
 using WebApp.Models;
 
 namespace WebApp.Controllers
@@ -8,20 +10,43 @@ namespace WebApp.Controllers
     {
         public IActionResult Index()
         {
-            //ViewBag es un objeto dinámico que permite enviar datos a la vista sin necesidad de definir una clase específica para ello
+            //viewbag es un objeto dinámico que permite enviar datos a la vista sin necesidad de definir una clase específica para ello
 
-            //uso ViewData para enviar datos a la vista
-            ViewBag.Id = 2;
-            ViewBag.Marca = "Epson";
-            ViewBag.Modelo = "Xlight";
-            ViewBag.NumeroDeSerie = "123456";
-            ViewBag.Situacion = "Bueno";
-            ViewBag.FechaDeAlta = DateTime.Now.ToString();
-            return View();
+            //uso viewdata para enviar datos a la vista
+            //viewbag.id = 2;
+            //viewbag.marca = "epson";
+            //viewbag.modelo = "xlight";
+            //viewbag.numerodeserie = "123456";
+            //viewbag.situacion = "bueno";
+            //viewbag.fechadealta = datetime.now.tostring();
+            //return view();
 
             //Uso de modelo de la vista  
-            Proyector proyector = new()
+            
+            var modelo = LoadDATA();
 
+            //var modelo = new List<proyector()>;
+
+            return View(modelo);
+        }
+
+        private IEnumerable<Proyector> LoadDATA()
+        {
+            var proyectores = new List<Proyector>();
+
+            proyectores.Add(new Proyector()
+
+            {
+                Id = 1,
+                Marca = "Epson",
+                Modelo = "Xlight",
+                NumeroDeSerie = "123456",
+                Situacion = SituacionProyector.Bueno,
+                FechaDeAlta = DateTime.Now
+            });
+
+            proyectores.Add(new Proyector()
+            
             {
                 Id = 2,
                 Marca = "Epson",
@@ -29,10 +54,39 @@ namespace WebApp.Controllers
                 NumeroDeSerie = "123456",
                 Situacion = SituacionProyector.Bueno,
                 FechaDeAlta = DateTime.Now
-            };
+            });
 
+            proyectores.Add(new Proyector()
+            {
+                Id = 3,
+                Marca = "Epson",
+                Modelo = "Xlight",
+                NumeroDeSerie = "123456",
+                Situacion = SituacionProyector.Bueno,
+                FechaDeAlta = DateTime.Now
+            });
 
-            return View(proyector);
+            proyectores.Add(new Proyector()
+            {
+                Id = 4,
+                Marca = "Epson",
+                Modelo = "Xlight",
+                NumeroDeSerie = "123456",
+                Situacion = SituacionProyector.Bueno,
+                FechaDeAlta = DateTime.Now
+            });
+
+            proyectores.Add(new Proyector()
+            {
+                Id = 5,
+                Marca = "Epson",
+                Modelo = "Xlight",
+                NumeroDeSerie = "123456",
+                Situacion = SituacionProyector.Bueno,
+                FechaDeAlta = DateTime.Now
+            });
+
+            return proyectores;
         }
 
         public IActionResult Privacy()
