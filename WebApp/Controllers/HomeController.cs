@@ -9,20 +9,7 @@ namespace WebApp.Controllers
     public class HomeController : Controller
     {
         public IActionResult Index()
-        {
-            //viewbag es un objeto dinámico que permite enviar datos a la vista sin necesidad de definir una clase específica para ello
-
-            //uso viewdata para enviar datos a la vista
-            //viewbag.id = 2;
-            //viewbag.marca = "epson";
-            //viewbag.modelo = "xlight";
-            //viewbag.numerodeserie = "123456";
-            //viewbag.situacion = "bueno";
-            //viewbag.fechadealta = datetime.now.tostring();
-            //return view();
-
-            //Uso de modelo de la vista  
-            
+        { 
             var modelo = LoadData();
 
             //var modelo = new List<proyector()>;
