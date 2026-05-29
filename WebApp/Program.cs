@@ -9,7 +9,11 @@ builder.Services.AddControllersWithViews();
 
 
 builder.Services.AddDbContext<AppDbContext>(
-    options => options.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Proyectores;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False;Command Timeout=30"));
+    options =>
+        options.UseSqlServer(builder.Configuration.GetConnectionString("Connection"))
+    );
+
+    /*options.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Proyectores;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False;Command Timeout=30"));*/
 
 builder.Services.AddTransient<IProyectoresService, ProyectoresService>();
 
