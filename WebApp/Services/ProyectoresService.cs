@@ -19,7 +19,7 @@ namespace WebApp.Services
                 _contexto.SaveChanges();
             }
         }
-
+      
         public IEnumerable<Proyector> GetAll()
         {
             return _contexto.Proyectores.ToList<Proyector>();

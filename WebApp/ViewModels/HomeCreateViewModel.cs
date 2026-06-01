@@ -24,6 +24,13 @@ namespace WebApp.ViewModels
         [DataType(DataType.Date)]
         public DateTime? FechaDeBaja { get; set; } = null;
 
+        public enum SituacionProyector
+        {
+            Bueno = 1,
+            Regular = 2,
+            Malo = 3
+        }
+
     }
 
 }
