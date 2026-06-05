@@ -4,7 +4,11 @@ namespace WebApp.Services
 {
     public interface IProyectoresService
     {
-        IEnumerable<Proyector> GetAll();
+        IEnumerable<Models.Proyector> GetAll();
         void AddProyector(Proyector proyector);
+        Proyector? GetProyector(int id);
+        void UpdateProyector(Proyector proyector);
+        Proyector? DeleteProyector(Proyector proyector);
+
     }
 }

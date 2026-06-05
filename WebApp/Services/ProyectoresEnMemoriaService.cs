@@ -7,7 +7,8 @@ namespace WebApp.Services
         private static List<Proyector> _proyectores = LoadData();
         public void AddProyector(Proyector proyector)
         {
-            if (proyector !=null)
+
+            if (proyector != null)
             {
                 _proyectores.Add(proyector);
             }
@@ -15,7 +16,6 @@ namespace WebApp.Services
 
         public IEnumerable<Proyector> GetAll()
         {
-           
             return _proyectores;
         }
 
@@ -24,10 +24,9 @@ namespace WebApp.Services
             var proyectores = new List<Proyector>();
 
             proyectores.Add(new Proyector()
-
             {
                 Id = 1,
-                Marca = "Epson",
+                Marca = "Hp",
                 Modelo = "Xlight",
                 NumeroDeSerie = "123456",
                 Situacion = SituacionProyector.Bueno,
@@ -35,32 +34,29 @@ namespace WebApp.Services
             });
 
             proyectores.Add(new Proyector()
-
             {
                 Id = 2,
-                Marca = "LG",
-                Modelo = "XLig574",
+                Marca = "Lg",
+                Modelo = "Xlight674",
                 NumeroDeSerie = "123788",
                 Situacion = SituacionProyector.Bueno,
                 FechaDeAlta = DateTime.Now
             });
-
             proyectores.Add(new Proyector()
             {
                 Id = 3,
                 Marca = "Sony",
-                Modelo = "VPL-XW5000",
-                NumeroDeSerie = "123999",
+                Modelo = "VPL-WX",
+                NumeroDeSerie = "123456",
                 Situacion = SituacionProyector.Regular,
                 FechaDeAlta = DateTime.Now
             });
-
             proyectores.Add(new Proyector()
             {
                 Id = 4,
                 Marca = "Samsung",
-                Modelo = "Xlig874",
-                NumeroDeSerie = "15789",
+                Modelo = "Xlight",
+                NumeroDeSerie = "123456",
                 Situacion = SituacionProyector.Malo,
                 FechaDeAlta = DateTime.Now
             });
@@ -69,8 +65,8 @@ namespace WebApp.Services
             {
                 Id = 5,
                 Marca = "Panasonic",
-                Modelo = "X4874",
-                NumeroDeSerie = "178921",
+                Modelo = "X4838",
+                NumeroDeSerie = "58763",
                 Situacion = SituacionProyector.Bueno,
                 FechaDeAlta = DateTime.Now
             });
@@ -78,5 +74,24 @@ namespace WebApp.Services
             return proyectores;
         }
 
+        public Proyector? GetProyector(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void UpdateProyector(Proyector proyector)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void DeleteProyector(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Proyector? DeleteProyector(Proyector proyector)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
