@@ -86,12 +86,7 @@ namespace WebApp.Controllers
             }
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
-
+       
         public IActionResult Delete(int id)
         {
             var modelo = _service.GetProyector(id);
@@ -112,6 +107,13 @@ namespace WebApp.Controllers
             }
             return RedirectToAction(nameof(Index));
 
+        } 
+        
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
     }
 }

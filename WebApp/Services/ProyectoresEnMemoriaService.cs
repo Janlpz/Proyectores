@@ -74,6 +74,11 @@ namespace WebApp.Services
             return proyectores;
         }
 
+        public Proyector Get(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public Proyector? GetProyector(int id)
         {
             throw new NotImplementedException();
